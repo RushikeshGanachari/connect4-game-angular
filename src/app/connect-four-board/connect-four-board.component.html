@@ -1,0 +1,13 @@
+<div class="board">
+    <div *ngFor="let row of board; let rowIndex = index" class="row">
+        <div
+            *ngFor="let cell of row; let columnIndex = index"
+            [ngClass]="{
+                'red': cell === 'red',
+                'yellow': cell === 'yellow',
+                'empty': !cell
+            }"
+            (click)="onCellClick(columnIndex)">
+        </div>
+    </div>
+</div>

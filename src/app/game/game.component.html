@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="game-title">Connect 4 Game</h1>
+    <app-connect-four-board [board]="gameBoard" (cellClick)="handleCellClick($event)"></app-connect-four-board>
+    <div class="btn-container">
+        <button mat-button class="btn" (click)="undo()" [disabled]="moveHistory.length === 0">Undo</button>
+        <button mat-button class="btn" (click)="redo()" [disabled]="redoStack.length === 0">Redo</button>
+    </div>
+    <div class="winner-msg">
+        <p *ngIf="winner"><b>{{ winner }} wins!</b></p>
+    </div>
+</div>
